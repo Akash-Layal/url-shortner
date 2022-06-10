@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+html {
+  font-size: 100%;
+}
+body {
+  background-color: #04151f;
+  color: white;
+}
+/*header title*/
+.container {
+  min-height: 40vh;
+  position: relative;
+  background-color: #04151f;
+}
+.heading-container {
+  position: relative;
+  padding: 4rem;
+  color: white;
+  text-align: center;
+}
+.heading-container h1 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+.heading-container p {
+  padding: 1rem 0rem;
+  letter-spacing: 0.4rem;
+}
+
+/*form*/
+.shortner-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: #c44800;
+}
+form {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+input {
+  width: 70%;
+  padding: 0.5rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+}
+/*Buttons*/
+.btn {
+  padding: 0.5rem 2rem;
+  background-color: #04151f;
+  color: white;
+  border: 1px solid #432534;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+.copy {
+  background-color: #c44800;
+  border: none;
+}
+/*error message*/
+
+.error-msg {
+  background-color: #660000;
+  color: #f3eff5;
+  max-width: 300px;
+  position: fixed;
+  top: 187px;
+  left: 50%;
+  transform: translateX(50%);
+  margin: auto;
+  z-index: 6;
+  padding: 0.2rem 1rem;
+  font-weight: 900;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  visibility: hidden;
+  transition: all 0.8s ease-in-out;
+}
+.error-msg #error {
+  color: white;
+  padding: 10px;
+}
+
+.error-msg.show {
+  visibility: visible;
+  transform: translateX(-153%);
+}
+
+/*Shorten URLs*/
+.content {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.url-box {
+  width: 100%;
+}
+.links-container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: #efd6ac;
+  color: #432534;
+  border: 1px solid #183a37;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in;
+}
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.default-link {
+  width: 100%;
+}
+.short-link {
+  padding: 0rem 3rem;
+}
+
+.short-link:hover {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1280px) {
+  .error-msg {
+    min-width: max-content;
+    position: fixed;
+    top: 187px;
+    left: 39%;
+  }
+.container{
+  min-height: 44vh;
+}
+  .error-msg.show {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+  form {
+    gap: 1rem;
+  }
+  input{
+    width: 100%;
+  }
+  .links-container{
+    width: 80%;
+    margin: 2rem auto;
+    padding: 0.5rem 0.5rem;
+  }
+  .url-box {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 615px){
+  html{
+    font-size: 70%;
+  }
+  .heading-container p {
+    margin-top: 3rem;
+  }
+  .error-msg {
+    min-width: max-content;
+    position: fixed;
+    top: 208px;
+    left: 50%;
+
+  }
+
+  .error-msg.show {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+
+  .shortner-container {
+    padding: 1rem 5rem;
+  }
+
+  form {width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  input {
+    width: 100%;
+  }
+  .content{
+    width: 90%;
+  }
+
+  .links-container{
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0.5rem 0.5rem;
+  }
+  .url-box {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 70%;
+  }
+  .heading-container p {
+    margin-top: 3rem;
+  }
+  .error-msg {
+    max-width: 300px;
+    position: fixed;
+    top: 208px;
+    left: 62px;
+  }
+  .error-msg.show {
+    visibility: visible;
+    transform: translateX(-30%);
+  }
+  .shortner-container {
+    padding: 0.5rem 0.5rem;
+  }
+  form {
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    width: 100%;
+  }
+  input::placeholder {
+    text-align: center;
+  }
+  .shortner-container {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .content {
+    width: 100vw;
+  }
+
+  .url-box {
+    width: 100%;
+  }
+  .links-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

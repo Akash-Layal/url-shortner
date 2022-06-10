@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mithya Lab - URL Shortner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="heading-container">
+          <h1>Mithya Labs Url Shortner</h1>
+          <p>Simplify your links, By shortning them</p>
+        </div>
+
+        <div class="error-msg">
+          <span id="error">You must paste a valid URL</span>
+        </div>
+
+        <div class="shortner-container">
+          <form action="/" method="post">
+            <input
+              id="input-link"
+              type="text"
+              name="url"
+              placeholder="Paste your link here"
+            />
+            <button class="btn short-link-btn">Shorten</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2>Shorten URLs</h2>
+
+        <div class="url-box">
+          <div class="links-container">
+            <span class="default-link links"></span>
+            <span class="short-link links"></span>
+            <button class="btn copy">Copy</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
